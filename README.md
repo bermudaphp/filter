@@ -28,3 +28,24 @@ composer require bermudaphp/filter
 ```
 
 ## Usage
+```php
+$nonFiltered = [1, 2, 3, null, 4, 5, null, 6, 7, 8, 9, new StdClass];
+
+        $filter = new OneOfFilter([
+            new ChainableFilter([
+                new NumericFilter(),
+                new EvenNumberFilter,
+            ]),
+            new ObjectFilter()
+        ], $nonFiltered);
+
+        dd($filter->toArray());
+
+^ array:5 [▼
+  0 => 2
+  1 => 4
+  2 => 6
+  3 => 8
+  4 => {#356}
+]
+```
