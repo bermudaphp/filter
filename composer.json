@@ -1,0 +1,13 @@
+{
+    "name": "bermudaphp/filter",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bermuda\\Filter\\": "src/"
+        }
+  },
+  "require": {
+    "php": "^8.4",
+    "bermudaphp/arrayable": "^1.0"
+  }
+}
