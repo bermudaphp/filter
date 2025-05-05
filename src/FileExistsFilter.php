@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if its value, when interpreted as a file path, exists in the file system.
  */
-final class FileExistsFilter extends AbstractFilter implements FilterInterface
+final class FileExistsFilter extends AbstractFilter
 {
     /**
      * Determines whether the given element represents an existing file.

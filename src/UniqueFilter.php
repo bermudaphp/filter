@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if it has not been seen before.
  * This filter maintains internal state and is therefore stateful.
  */
-final class UniqueFilter extends AbstractFilter implements FilterInterface
+final class UniqueFilter extends AbstractFilter
 {
     /**
      * @var array The set of values that have already been encountered.
@@ -32,5 +32,30 @@ final class UniqueFilter extends AbstractFilter implements FilterInterface
         }
         $this->seen[] = $value;
         return true;
+    }
+    /**
+     * __clone
+     *
+     * When a UniqueFilter instance is cloned, reset the internal $seen state.
+     * This ensures that a clone starts with an empty history.
+     */
+    public function __clone(): void
+    {
+        $this->seen = [];
+    }
+
+    /**
+     * Returns an iterator that yields each element from the iterable that passes the filter criteria.
+     *
+     * Before iterating, reset the internal state ($seen) to ensure that the filtering is applied
+     * from a clean starting point. Then delegate to the parent implementation, which iterates
+     * over the data source and uses accept() for each element.
+     *
+     * @return \Generator A generator yielding the filtered key-value pairs.
+     */
+    public function getIterator(): \Generator
+    {
+        $this->seen = [];
+        return parent::getIterator();
     }
 }

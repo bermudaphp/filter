@@ -3,17 +3,15 @@
 namespace Bermuda\Filter;
 
 /**
- * KeyIntersectFilter
+ * KeyOnlyFilter
  *
  * Accepts an element if its key is present in the allowed keys array.
- *
- * Note: This filter compares only the key (passed as the first parameter to accept())
- * against the provided allowed keys. No additional type or auxiliary checks are performed.
+ * No additional checks or type validations are performed.
  */
-final class KeyIntersectFilter extends AbstractFilter
+final class KeyOnlyFilter extends AbstractFilter
 {
     /**
-     * @var array List of allowed keys.
+     * @var array The list of allowed keys.
      */
     private array $allowedKeys;
 
@@ -30,10 +28,10 @@ final class KeyIntersectFilter extends AbstractFilter
     }
 
     /**
-     * Returns a new instance with updated allowed keys.
+     * Returns a new instance with an updated allowed keys array.
      *
      * @param array $allowedKeys The new array of allowed keys.
-     * @return self A new KeyIntersectFilter instance with the updated allowed keys.
+     * @return self A new KeyOnlyFilter instance with updated keys.
      */
     public function withAllowedKeys(array $allowedKeys): self
     {
@@ -43,13 +41,11 @@ final class KeyIntersectFilter extends AbstractFilter
     }
 
     /**
-     * Determines whether the element should be accepted.
-     *
-     * Accepts the element if its key is in the allowed keys array.
+     * Evaluates whether the element should be accepted based solely on its key.
      *
      * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value (unused).
-     * @return bool True if the key is allowed; otherwise, false.
+     * @return bool True if the key is in the allowed keys array, false otherwise.
      */
     public function accept(int|string $key, mixed $value): bool
     {

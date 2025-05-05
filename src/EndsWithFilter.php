@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its string value ends with the specified suffix.
  * Supports both case-sensitive and case-insensitive comparisons.
  */
-final class EndsWithFilter extends AbstractFilter implements FilterInterface
+final class EndsWithFilter extends AbstractFilter
 {
     /**
      * @var string The suffix that the string must end with.

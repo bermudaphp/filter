@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its value equals the expected value. You can choose between strict
  * comparison (using ===) and simple comparison (using ==) via the strictComparison flag.
  */
-final class EqualsFilter extends AbstractFilter implements FilterInterface
+final class EqualsFilter extends AbstractFilter
 {
     /**
      * @var mixed The expected value to compare against.

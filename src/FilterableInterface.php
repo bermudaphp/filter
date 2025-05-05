@@ -29,6 +29,14 @@ interface FilterableInterface
     public function withFilter(FilterInterface $filter, bool $prepend = false): FilterableInterface;
 
     /**
+     * Checks whether the given filter exists in the chain.
+     *
+     * @param FilterInterface $filter The filter to search for.
+     * @return bool Returns true if the filter is found in the chain; otherwise, false.
+     */
+    public function hasFilter(FilterInterface $filter): bool ;
+
+    /**
      * Returns a new instance with the specified filter removed from the filter chain.
      *
      * This method enables modifying the filter chain by excluding a filter that was previously applied.

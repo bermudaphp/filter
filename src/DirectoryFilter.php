@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if its value, when treated as a file path, is a directory.
  */
-final class DirectoryFilter extends AbstractFilter implements FilterInterface
+final class DirectoryFilter extends AbstractFilter
 {
     /**
      * Determines whether the given element is an existing directory.

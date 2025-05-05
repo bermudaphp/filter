@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its string value starts with the specified prefix.
  * Comparison can be either case sensitive or insensitive.
  */
-final class StartsWithFilter extends AbstractFilter implements FilterInterface
+final class StartsWithFilter extends AbstractFilter
 {
     /**
      * @var string The prefix that the string must start with.

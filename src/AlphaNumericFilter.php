@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its string value contains only alphanumeric characters.
  * Uses a regular expression to validate that the value consists exclusively of letters and digits.
  */
-final class AlphaNumericFilter extends AbstractFilter implements FilterInterface
+final class AlphaNumericFilter extends AbstractFilter
 {
     /**
      * Determines whether the given element should be accepted.

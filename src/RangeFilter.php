@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its numeric value (converted to float) falls between a minimum and maximum value, inclusively.
  * Only the primary comparison check is performed.
  */
-final class RangeFilter extends AbstractFilter implements FilterInterface
+final class RangeFilter extends AbstractFilter
 {
     /**
      * @var float The minimum allowed value.

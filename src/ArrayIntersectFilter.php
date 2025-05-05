@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if the intersection of the element's array and the provided allowed values is non-empty.
  * It uses array_intersect() to calculate the common values between the two arrays.
  */
-final class ArrayIntersectFilter extends AbstractFilter implements FilterInterface
+final class ArrayIntersectFilter extends AbstractFilter
 {
     /**
      * @var array The array of allowed values.

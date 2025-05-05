@@ -9,7 +9,7 @@ namespace Bermuda\Filter;
  * specified in the exclusion array. It computes array_diff($value, $excludedValues) and
  * compares the result to the original value.
  */
-final class ArrayDiffFilter extends AbstractFilter implements FilterInterface
+final class ArrayDiffFilter extends AbstractFilter
 {
     /**
      * @var array The array of excluded values.

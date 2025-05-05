@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if its numeric value (cast to float) is a multiple of a specified divisor.
  */
-final class MultipleOfFilter extends AbstractFilter implements FilterInterface
+final class MultipleOfFilter extends AbstractFilter
 {
     /**
      * @var float The divisor used to test divisibility.

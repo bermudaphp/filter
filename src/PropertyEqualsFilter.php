@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if it is an object that has a property matching a specified name
  * and that property's value equals the expected value.
  */
-final class PropertyEqualsFilter extends AbstractFilter implements FilterInterface
+final class PropertyEqualsFilter extends AbstractFilter
 {
     /**
      * @var string The property name to check.

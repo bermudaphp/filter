@@ -3,16 +3,15 @@
 namespace Bermuda\Filter;
 
 /**
- * KeyDiffFilter
+ * KeyExcludeFilter
  *
- * Accepts an element if its key is not included in the excluded keys array.
- *
- * Note: This filter compares solely the element's key against the provided disallowed keys.
+ * Accepts an element if its key is not found in the excluded keys array.
+ * This filter performs no additional type or auxiliary checks.
  */
-final class KeyDiffFilter extends AbstractFilter
+final class KeyExcludeFilter extends AbstractFilter
 {
     /**
-     * @var array List of disallowed keys.
+     * @var array The list of keys to exclude.
      */
     private array $excludedKeys;
 
@@ -29,10 +28,10 @@ final class KeyDiffFilter extends AbstractFilter
     }
 
     /**
-     * Returns a new instance with updated disallowed keys.
+     * Returns a new instance with updated excluded keys.
      *
      * @param array $excludedKeys The new array of keys to exclude.
-     * @return self A new KeyDiffFilter instance with the updated excluded keys.
+     * @return self A new KeyExcludeFilter instance with updated keys.
      */
     public function withExcludedKeys(array $excludedKeys): self
     {
@@ -42,13 +41,11 @@ final class KeyDiffFilter extends AbstractFilter
     }
 
     /**
-     * Determines whether the element should be accepted.
-     *
-     * Accepts the element if its key is NOT present in the excluded keys array.
+     * Evaluates whether the element should be accepted based solely on its key.
      *
      * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value (unused).
-     * @return bool True if the key is not excluded; otherwise, false.
+     * @return bool True if the key is not in the excluded keys array, false otherwise.
      */
     public function accept(int|string $key, mixed $value): bool
     {

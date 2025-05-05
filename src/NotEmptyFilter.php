@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its value is not empty.
  * This filter uses only the primary check by negating PHP's empty() function.
  */
-final class NotEmptyFilter extends AbstractFilter implements FilterInterface
+final class NotEmptyFilter extends AbstractFilter
 {
     /**
      * Determines whether the given element should be accepted.

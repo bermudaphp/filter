@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its string value exactly equals the expected string.
  * Supports both case-sensitive and case-insensitive comparisons.
  */
-final class StringEqualsFilter extends AbstractFilter implements FilterInterface
+final class StringEqualsFilter extends AbstractFilter
 {
     /**
      * @var string The expected string to compare against.

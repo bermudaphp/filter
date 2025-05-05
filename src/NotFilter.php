@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if the provided filter does NOT accept it.
  * Only the primary check is used: the result of the inner filter's accept() is inverted.
  */
-final class NotFilter extends AbstractFilter implements FilterInterface
+final class NotFilter extends AbstractFilter
 {
     /**
      * @var FilterInterface The filter whose result will be inverted.

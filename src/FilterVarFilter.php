@@ -9,7 +9,7 @@ namespace Bermuda\Filter;
  * The element is accepted if filter_var() returns a value that is not false.
  * This filter is generic and can be used for various validation and sanitization tasks.
  */
-final class FilterVarFilter extends AbstractFilter implements FilterInterface
+final class FilterVarFilter extends AbstractFilter
 {
     /**
      * @var int The filter constant to be used with filter_var, e.g., FILTER_VALIDATE_EMAIL.

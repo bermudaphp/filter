@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if its value, when parsed as a date, falls between the specified minimum and maximum dates.
  */
-final class DateRangeFilter extends AbstractFilter implements FilterInterface
+final class DateRangeFilter extends AbstractFilter
 {
     /**
      * @var int The minimum date timestamp.

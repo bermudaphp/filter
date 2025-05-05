@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if the length of its string value is between the specified minimum and maximum lengths.
  */
-final class LengthRangeFilter extends AbstractFilter implements FilterInterface
+final class LengthRangeFilter extends AbstractFilter
 {
     /**
      * @var int The minimum required length.

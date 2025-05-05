@@ -10,7 +10,7 @@ namespace Bermuda\Filter;
  * - When true, strict comparison (===) is used.
  * - When false, loose comparison (==) is used.
  */
-final class EqualsAnyFilter extends AbstractFilter implements FilterInterface
+final class EqualsAnyFilter extends AbstractFilter
 {
     /**
      * @var array The list of expected values.

@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its string value contains the specified substring.
  * Comparison can be case sensitive or insensitive.
  */
-final class ContainsFilter extends AbstractFilter implements FilterInterface
+final class ContainsFilter extends AbstractFilter
 {
     /**
      * @var string The substring to search for within the value.

@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its numeric value (cast to a float) falls between a specified minimum and maximum.
  * The comparison can be inclusive (default) or exclusive based on the $inclusive flag.
  */
-final class BetweenFilter extends AbstractFilter implements FilterInterface
+final class BetweenFilter extends AbstractFilter
 {
     /**
      * @var float The minimum threshold.

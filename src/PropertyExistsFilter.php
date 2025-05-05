@@ -2,13 +2,15 @@
 
 namespace Bermuda\Filter;
 
+;
+
 /**
  * PropertyExistsFilter
  *
  * Accepts an element if the specified property exists on the value.
  * This filter simply uses PHP's native property_exists() function without any auxiliary checks.
  */
-final class PropertyExistsFilter extends AbstractFilter implements FilterInterface
+final class PropertyExistsFilter extends AbstractFilter
 {
     /**
      * @var string The name of the property to check for existence.

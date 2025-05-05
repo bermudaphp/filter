@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its value is present in the provided array of allowed values.
  * Supports both strict and loose comparisons.
  */
-final class InArrayFilter extends AbstractFilter implements FilterInterface
+final class InArrayFilter extends AbstractFilter
 {
     /**
      * @var array The allowed values.

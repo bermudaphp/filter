@@ -8,7 +8,7 @@ namespace Bermuda\Filter;
  * Accepts an element if its file extension (derived from its string value) is among the allowed list.
  * Comparison can be performed in a case-sensitive or case-insensitive manner.
  */
-final class FileExtensionFilter extends AbstractFilter implements FilterInterface
+final class FileExtensionFilter extends AbstractFilter
 {
     /**
      * @var string[] List of allowed extensions (without dots), e.g., ['jpg', 'png'].

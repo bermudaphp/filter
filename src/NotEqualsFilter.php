@@ -9,7 +9,7 @@ namespace Bermuda\Filter;
  * The filter supports both strict (using !==) and loose (using !=) comparisons,
  * determined by the $strictComparison flag.
  */
-final class NotEqualsFilter extends AbstractFilter implements FilterInterface
+final class NotEqualsFilter extends AbstractFilter
 {
     /**
      * @var mixed The expected value to compare against.

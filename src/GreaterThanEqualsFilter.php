@@ -7,7 +7,7 @@ namespace Bermuda\Filter;
  *
  * Accepts an element if its value (cast to a float) is greater than or equal to the specified threshold.
  */
-final class GreaterThanEqualsFilter extends AbstractFilter implements FilterInterface
+final class GreaterThanEqualsFilter extends AbstractFilter
 {
     /**
      * @var float The minimum threshold value.
