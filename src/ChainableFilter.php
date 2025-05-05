@@ -83,15 +83,15 @@ class ChainableFilter extends AbstractFilter implements FilterableInterface
      *
      * The element is accepted only if every filter in the chain returns true for its key and value.
      *
-     * @param int|string $key The key associated with the value.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the value.
      * @return bool Returns true if all filters accept the element; false if any one rejects it.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // Note: array_all() is assumed to be a helper function that returns true only if the provided callback
         // returns true for every element in the iterable.
-        return array_all($this->filters, static fn($filter) => $filter->accept($key, $value));
+        return array_all($this->filters, static fn($filter) => $filter->accept($value, $key));
     }
 
     /**
