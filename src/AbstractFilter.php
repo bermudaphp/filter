@@ -38,7 +38,7 @@ abstract class AbstractFilter implements FilterInterface
         foreach ($this->iterable as $key => $value) {
             if ($value instanceof FilterInterface) {
                 yield from $value->getIterator();
-            } else if ($this->accept($key, $value)) {
+            } else if ($this->accept($value, $key)) {
                 yield $key => $value;
             }
         }
@@ -82,9 +82,9 @@ abstract class AbstractFilter implements FilterInterface
      * It receives both the key and value of the current element, and returns true if the
      * element should be included in the filtered results, false otherwise.
      *
-     * @param string|int $key   The key associated with the current element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the current element.
      * @return bool Returns true if the element satisfies the filter criteria; false otherwise.
      */
-    abstract public function accept(string|int $key, mixed $value): bool;
+    abstract public function accept(mixed $value, string|int|null $key = null): bool;
 }
