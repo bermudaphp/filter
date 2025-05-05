@@ -18,12 +18,12 @@ class OneOfFilter extends ChainableFilter
      * This is evaluated using the helper function array_any(), which returns true if the callback yields true
      * for at least one element in the filters list.
      *
-     * @param int|string $key   The key associated with the element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if at least one filter accepts the element; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
-        return array_any($this->filters, static fn($filter) => $filter->accept($key, $value));
+        return array_any($this->filters, static fn($filter) => $filter->accept($value, $key));
     }
 }
