@@ -55,13 +55,13 @@ trait Filterable
      *
      * The element is accepted only if every filter in the chain returns true for its key and value.
      *
-     * @param int|string $key The key associated with the value.
      * @param mixed $value The element to be evaluated.
+     * @param int|string|null $key The key associated with the value.
      * @return bool Returns true if all filters accept the element; false if any one rejects it.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, int|string|null $key = null): bool
     {
-        return array_all($this->filters, static fn($filter) => $filter->accept($key, $value));
+        return array_all($this->filters, static fn($filter) => $filter->accept($value, $key));
     }
 
     /**
