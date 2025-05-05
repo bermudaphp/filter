@@ -48,12 +48,12 @@ final class CallbackFilter extends AbstractFilter
      * Only the main check is performed: if the callback returns true when called with ($key, $value),
      * the element is accepted. No additional type checks are performed.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the callback returns true; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
-        return ($this->callback)($key, $value);
+        return ($this->callback)($value, $key);
     }
 }
