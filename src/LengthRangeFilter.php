@@ -62,11 +62,11 @@ final class LengthRangeFilter extends AbstractFilter
     /**
      * Determines whether the element's length is within the set range.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the length is between min and max; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $length = strlen((string)$value);
         return ($length >= $this->minLength && $length <= $this->maxLength);

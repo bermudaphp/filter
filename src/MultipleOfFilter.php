@@ -42,11 +42,11 @@ final class MultipleOfFilter extends AbstractFilter
     /**
      * Determines whether the element's numeric value is divisible by the divisor.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if $value (cast to float) is a multiple of the divisor; false if not or divisor is 0.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         if ($this->divisor == 0.0) {
             return false;

@@ -65,11 +65,11 @@ final class StartsWithFilter extends AbstractFilter
      *
      * The element is accepted if its value (as a string) starts with the specified prefix.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the element's string value starts with the prefix; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $stringValue = (string)$value;
         $len = strlen($this->prefix);

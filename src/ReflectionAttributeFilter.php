@@ -51,11 +51,11 @@ final class ReflectionAttributeFilter extends AbstractFilter
      * The element is accepted if calling getAttributes() with the specified attribute name
      * returns a non-empty array.
      *
-     * @param int|string $key   The key associated with the reflection element.
      * @param \ReflectionClass|\ReflectionFunction      $value The reflection element to evaluate.
+     * @param string|int|null $key   The key associated with the reflection element.
      * @return bool True if the element has the specified attribute; false otherwise.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $attributes = $value?->getAttributes($this->attributeName) ?? 0;
         return count($attributes) > 0;

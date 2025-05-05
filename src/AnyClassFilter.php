@@ -50,11 +50,11 @@ final class AnyClassFilter extends AbstractFilter
      *
      * Only the primary equality check is used: $value::class is compared against the allowed classes array.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if $value::class exactly equals one of the allowed class names; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return in_array($value::class, $this->allowedClasses, true);
     }

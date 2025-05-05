@@ -15,11 +15,11 @@ final class EmptyFilter extends AbstractFilter
      *
      * The element is accepted if PHP's empty() function returns true for the value.
      *
-     * @param int|string $key   The key associated with the element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the element is empty; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return empty($value);
     }

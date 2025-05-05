@@ -69,11 +69,11 @@ final class NotEqualsAnyFilter extends AbstractFilter
      * The element is accepted if its value does NOT equal any of the expected values.
      * The check uses strict (!==) or loose (!=) comparison based on the $strictComparison flag.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool Returns true if none of the expected values equal the element's value.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return !array_any($this->expectedValues, static function ($expected) use ($value) {
             return $this->strictComparison

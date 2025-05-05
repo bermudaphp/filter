@@ -69,11 +69,11 @@ final class StringEqualsFilter extends AbstractFilter
      * The element is accepted if its string value equals the expected string.
      * If case sensitivity is disabled, the check is performed using a case-insensitive comparison.
      *
-     * @param int|string $key   The key associated with the element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the element equals the expected string; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         if ($this->caseSensitive) {
             return $value === $this->expected;

@@ -47,11 +47,11 @@ final class ArrayDiffFilter extends AbstractFilter
      * Accepts the element if array_diff($value, $excludedValues) equals the original $value,
      * meaning none of the excluded values are present.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element's array value.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if no excluded values are found in $value; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return array_diff($value, $this->excludedValues) == $value;
     }

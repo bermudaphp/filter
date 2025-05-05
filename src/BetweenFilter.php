@@ -83,11 +83,11 @@ final class BetweenFilter extends AbstractFilter
     /**
      * Determines whether the element's numeric value is between min and max.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the numeric value falls within the range; else, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $num = (float)$value;
         if ($this->inclusive) {

@@ -46,11 +46,11 @@ final class ReflectionSubclassFilter extends AbstractFilter
      *
      * The element is accepted if it is a subclass of the specified parent class.
      *
-     * @param int|string $key   The key associated with the reflection element.
      * @param \ReflectionClass      $value The \ReflectionClass element to evaluate.
+     * @param string|int|null $key   The key associated with the reflection element.
      * @return bool True if the reflection class is a subclass of the specified parent class; false otherwise.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return $value?->isSubclassOf($this->parentClass) ?? false;
     }

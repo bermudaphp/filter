@@ -48,11 +48,11 @@ final class SubclassFilter extends AbstractFilter
      * Only the main check is used: is_subclass_of($value, $this->parentClass).
      * No explicit type checking is performed here (e.g. is_object($value) is omitted).
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if is_subclass_of($value, $this->parentClass) returns true; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return is_subclass_of($value, $this->parentClass);
     }

@@ -46,11 +46,11 @@ final class ReflectionImplementingFilter extends AbstractFilter
      * The element is accepted if it is a ReflectionClass instance and the class implements the
      * specified interface.
      *
-     * @param int|string $key The key associated with the reflection element.
      * @param \ReflectionClass $value The reflection element to evaluate.
+     * @param string|int|null $key The key associated with the reflection element.
      * @return bool True if $value is a ReflectionClass and implements $this->interfaceName; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // Accept the element if it implements the specified interface.
         return $value?->implementsInterface($this->interfaceName) ?? false;

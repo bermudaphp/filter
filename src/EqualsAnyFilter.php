@@ -69,11 +69,11 @@ final class EqualsAnyFilter extends AbstractFilter
      * The element is accepted if its value equals at least one of the expected values.
      * The check uses strict (===) or loose (==) comparison based on the $strictComparison flag.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool Returns true if at least one expected value matches the element's value.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return array_any($this->expectedValues, function ($expected) use ($value) {
             return $this->strictComparison

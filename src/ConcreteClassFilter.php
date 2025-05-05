@@ -51,11 +51,11 @@ final class ConcreteClassFilter extends AbstractFilter
      * Only the main check is performed: the concrete class of $value (via $value::class) must
      * exactly equal the specified target class. No additional type checking is done.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if $value::class exactly equals the target class; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return $value::class === $this->className;
     }

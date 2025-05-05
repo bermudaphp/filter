@@ -52,11 +52,11 @@ final class InstanceofAnyFilter extends AbstractFilter
      * Only the primary check is used: the filter iterates through each allowed class and
      * returns true if the value is an instance of any one of those classes.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the element is an instance of any allowed class; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return array_any($this->classes,static fn($class) => $value instanceof $class);
     }

@@ -85,11 +85,11 @@ final class EqualsFilter extends AbstractFilter
      * If strictComparison is true, a strict equality check (===) is performed.
      * Otherwise, a loose equality check (==) is used.
      *
-     * @param int|string $key The key associated with the element (unused in this filter).
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element (unused in this filter).
      * @return bool Returns true if the element's value matches the expected value based on the chosen mode.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         if ($this->strictComparison) {
             return $value === $this->expectedValue;

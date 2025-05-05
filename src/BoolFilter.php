@@ -15,11 +15,11 @@ final class BoolFilter extends AbstractFilter
      *
      * Only the main check is performed: it returns the result of is_bool($value).
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the value is a boolean; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return is_bool($value);
     }

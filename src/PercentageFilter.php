@@ -56,11 +56,11 @@ final class PercentageFilter extends AbstractFilter implements FilterInterface
      * based on the total element count and the specified filter percentage.
      * Then it accepts elements until this allowed count is reached.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool Returns true if the element is within the allowed count; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // Calculate the allowed count on the first call.
         if ($this->allowedCount === null) {

@@ -15,11 +15,11 @@ final class OddNumberFilter extends AbstractFilter
      *
      * The element is accepted only if its numeric value is an integer and is odd.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the value is an odd integer, false otherwise.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // If the value is not numeric, casting yields 0; explicitly return false.
         if (!is_numeric($value)) {

@@ -45,11 +45,11 @@ final class RegexFilter extends AbstractFilter
      * The method applies the regex pattern using preg_match and accepts the element if
      * the pattern matches (i.e., preg_match returns 1).
      *
-     * @param int|string $key   The key associated with the element.
      * @param string $value The value to be tested against the regex pattern.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the value matches the pattern; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return preg_match($this->pattern, (string) $value) === 1;
     }

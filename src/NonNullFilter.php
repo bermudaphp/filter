@@ -9,7 +9,7 @@ namespace Bermuda\Filter;
  */
 final class NonNullFilter extends AbstractFilter
 {
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return $value !== null;
     }

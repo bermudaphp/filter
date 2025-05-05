@@ -47,11 +47,11 @@ final class PropertyEqualsFilter extends AbstractFilter
      * The element is accepted only if it is an object, has the specified property,
      * and the property's value equals the expected value (using strict or loose comparison).
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the condition is met; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $propertyValue = $value->{$this->property};
         return $this->strict ? $propertyValue === $this->expectedValue : $propertyValue == $this->expectedValue;

@@ -15,11 +15,11 @@ final class ObjectFilter extends AbstractFilter
      *
      * Only the primary check is used: it returns the result of is_object(<value>).
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to evaluate.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the value is an object; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return is_object($value);
     }

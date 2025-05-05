@@ -62,11 +62,11 @@ final class DateRangeFilter extends AbstractFilter
     /**
      * Determines whether the element's date value is within the specified date range.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated; should be a date string.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the date (converted to timestamp) falls between min and max; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $timestamp = strtotime((string)$value);
         if ($timestamp === false) {

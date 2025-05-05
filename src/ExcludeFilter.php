@@ -43,11 +43,11 @@ final class ExcludeFilter extends AbstractFilter
     /**
      * Evaluates whether the element should be accepted based solely on its value.
      *
-     * @param int|string $key The key associated with the element (unused).
      * @param mixed $value The element to evaluate.
+     * @param string|int|null $key The key associated with the element (unused).
      * @return bool True if the value is not in the excluded values array; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return !in_array($value, $this->excludedValues, true);
     }

@@ -16,12 +16,12 @@ final class IsInterfaceFilter extends AbstractFilter
      * The element is accepted if its value is an interface name for which
      * interface_exists() returns true.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element.
      *
      * @return bool Returns true if the value is a string and a valid interface exists with that name; otherwise, false.
      */
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return interface_exists($value);
     }

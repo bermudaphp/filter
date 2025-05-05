@@ -50,11 +50,11 @@ final class ReflectionConcreteClassFilter extends AbstractFilter
      *
      * The element is accepted if the class name (as returned by getName()) is in the allowed class names array.
      *
-     * @param int|string $key   The key associated with the reflection element.
      * @param ReflectionClass      $value The reflection element to evaluate.
+     * @param string|int|null $key   The key associated with the reflection element.
      * @return bool True if $value->getName() is present in the allowed class names; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return in_array($value?->getName() ?? null, $this->allowedClassNames, true);
     }

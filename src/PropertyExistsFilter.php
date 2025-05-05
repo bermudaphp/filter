@@ -48,11 +48,11 @@ final class PropertyExistsFilter extends AbstractFilter
      * This method uses PHP's native property_exists() function to determine if the property exists.
      * No additional type or existence checks are performed.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to evaluate.
+     * @param string|int|null $key The key associated with the element.
      * @return bool Returns true if property_exists($value, $this->property) returns true; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return property_exists($value, $this->property);
     }

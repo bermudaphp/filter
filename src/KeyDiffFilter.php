@@ -46,11 +46,11 @@ final class KeyDiffFilter extends AbstractFilter
      *
      * Accepts the element if its key is NOT present in the excluded keys array.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element's value (unused).
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the key is not excluded; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return !in_array($key, $this->excludedKeys, true);
     }

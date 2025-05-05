@@ -46,11 +46,11 @@ final class RandomFilter extends AbstractFilter implements FilterInterface
      *
      * An element is accepted if a randomly generated float between 0 and 1 is less than the specified probability.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if accepted based on the probability, false otherwise.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // Generate a random float between 0 and 1.
         $randomValue = mt_rand() / mt_getrandmax();

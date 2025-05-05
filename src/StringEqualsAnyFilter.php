@@ -69,11 +69,11 @@ final class StringEqualsAnyFilter extends AbstractFilter
      * The element is accepted if its string value equals any one element in the allowed list.
      * The comparison is done using either strict equality or a case-insensitive check, depending on the setting.
      *
-     * @param int|string $key   The key associated with the element.
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if at least one allowed string equals the element's value; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return array_any($this->allowedStrings, static function ($allowed) use ($value) {
             if ($this->caseSensitive) {

@@ -66,11 +66,11 @@ final class FilterVarFilter extends AbstractFilter
      *
      * The element is accepted if filter_var($value, $filterConstant, $options) returns a result that is not false.
      *
-     * @param int|string $key   The key associated with the element (unused in this filter).
      * @param mixed      $value The element to be evaluated.
+     * @param string|int|null $key   The key associated with the element (unused in this filter).
      * @return bool Returns true if the element passes the filter_var check; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         // Apply filter_var with the specified filter constant and options.
         $result = filter_var($value, $this->filterConstant, $this->options ?? []);

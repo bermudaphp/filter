@@ -65,11 +65,11 @@ final class ContainsFilter extends AbstractFilter
      *
      * The element is accepted if its string value contains the specified substring.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool True if the substring is found; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         $stringValue = (string)$value;
         if ($this->caseSensitive) {

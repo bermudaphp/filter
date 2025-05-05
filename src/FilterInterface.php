@@ -34,11 +34,11 @@ interface FilterInterface extends \IteratorAggregate, Arrayable
      * if the element (identified by its key and value) meets the criteria and should
      * be included in the filtered results; otherwise, it should return false.
      *
-     * @param string|int $key   The key associated with the element.
      * @param mixed      $value The element to check.
+     * @param string|int|null $key   The key associated with the element.
      * @return bool Returns true if the element satisfies the filter's criteria, false otherwise.
      */
-    public function accept(string|int $key, mixed $value): bool;
+    public function accept(mixed $value, string|int|null $key = null): bool;
 
     /**
      * Converts the filtered result set to an array.

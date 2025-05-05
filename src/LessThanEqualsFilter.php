@@ -44,11 +44,11 @@ final class LessThanEqualsFilter extends AbstractFilter
      *
      * The element is accepted if its numeric value (cast to float) is less than or equal to the threshold.
      *
-     * @param int|string $key The key associated with the element.
      * @param mixed $value The element to be evaluated.
+     * @param string|int|null $key The key associated with the element.
      * @return bool Returns true if (float)$value <= threshold; otherwise, false.
      */
-    public function accept(int|string $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return (float)$value <= $this->threshold;
     }

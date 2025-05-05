@@ -9,7 +9,7 @@ namespace Bermuda\Filter;
  */
 final class ArrayFilter extends AbstractFilter
 {
-    public function accept(string|int $key, mixed $value): bool
+    public function accept(mixed $value, string|int|null $key = null): bool
     {
         return is_array($value);
     }
